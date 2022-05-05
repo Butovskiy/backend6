@@ -5,11 +5,17 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="style.css">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
-	<title>Task-6</title>
+	<title>Web6</title>
 </head>
 <body>
-	<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 bg-white border-bottom shadow-sm ">
-		<h1>Заполните форму</h1>
+	<div class="d-flex  flex-md-row align-items-center p-3 px-md-1 border-bottom shadow-sm " style="background-color: white;">
+		<div class="d-flex flex-column px-md-3">
+			<a href="login.php" style="text-decoration: none; color: #de530e;">Войти</a>
+			<a href="admin.php" style="text-decoration: none; color: #de530e;">Войти под именем администратора</a>	
+		</div>
+		<div class="d-flex flex-column px-md-5" style="margin-left: 350px">
+			<h1>Форма</h1>
+		</div>
 	</div>
 	<?php 
 		if (!empty($messages)) {
@@ -21,8 +27,7 @@
 		}
 	?>
 	<div class="container">
-	<a href="login.php">Войти</a><br>
-	<a href="admin.php">Войти в панель администратора</a>
+	
 		<form action="" method="POST">
 			<p><label for="name">Имя</label>
 			<input type="text" name="name" <?php if (!empty($errors['name'])) print 'class="error"'; ?> <?php if(empty($errors['name'])&&!empty($values['name'])) print 'class="ok"';?> value="<?php isset($_COOKIE['name_error'])? print trim($_COOKIE['name_error']) : print $values['name']; ?>"> </p>
